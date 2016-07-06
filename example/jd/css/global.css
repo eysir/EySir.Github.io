@@ -1,0 +1,66 @@
+* {margin: 0; padding: 0;}
+body, textarea, input, button, select, keygen, legend{font:14px "Microsoft YaHei", Verdana, "宋体", sans-serif; font-weight: normal; color: #666666; outline: 0;}
+header, footer, section, article, aside, nav, address, figure, figcaption, menu, details {display:block;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+table {border-collapse: collapse; border-spacing: 0;}
+caption, th {text-align:left;font-weight: normal;}
+html, body, fieldset, img, iframe, abbr{border: 0;}
+i, cite, em, var, address, dfn{font-style: normal;}
+summary{outline: 0;}
+ul, li{list-style: none;}
+img {vertical-align: middle;}
+a, a:hover{text-decoration: none; cursor: pointer;}
+a:link {color: #666666;}
+a:visited {color: #666666;}
+a:hover {color: #C91618;}
+a:active {color: #666666;}
+
+.outer-section {width:100%; float: left; clear: both;}
+.outer-wrapper {width:100%; max-width: 990px; margin: 0 auto;}
+.columns {max-width: 990px; margin: 0 auto;}
+.banner {width:100%; max-width: 990px; height: auto;}
+.outer-banner {width:100%; max-width: 1263px; margin: 0 auto; height: auto;}
+
+#outer-section-1 {background-color: #F9F9F9;}
+#outer-section-1 .outer-banner {background: url(../images/qd_s1_bg.png) no-repeat scroll center bottom / cover;}
+#outer-section-2 {background-color: #FFFFFF;}
+#outer-section-2 .outer-banner {background: url(../images/qd_s2_bg.png) no-repeat scroll center bottom / cover;}
+#outer-section-3 {background-color: #F9CC93;}
+#outer-section-3 .outer-banner {background: url(../images/qd_s3_bg.png) no-repeat scroll center bottom / cover;}
+#outer-section-4 {background-color: #FFDB2B;}
+#outer-section-5 {background-color: #01AFEE;}
+#outer-section-6 {background-color: #E72758;}
+#outer-section-6 .outer-banner {background: url(../images/qd_s6_bg.png) no-repeat scroll center bottom / cover;}
+#outer-section-7 {background-color: #FFDB2B;}
+#outer-section-8 {background-color: #FFDB2B;}
+#outer-section-8 .columns {padding: 10px 0px; overflow:hidden;}
+#outer-section-8 .columns li {width: 100%; float: left;}
+#outer-section-8 .columns li img {width: 100%; height: auto;}
+#outer-section-9 {background-color: #7D47D9;}
+#outer-section-10 {background-color: #E7594D;}
+#outer-section-11 {background-color: #11B68C;}
+#outer-section-12 {background-color: #FF6877;}
+#outer-section-13 {background-color: #9FD946;}
+#outer-section-14 {background-color: #FFDB2B;}
+#outer-section-14 .columns {padding: 10px 0px 20px 0px; overflow:hidden;}
+#outer-section-14 .columns ul {margin-left: -4px; margin-right: -4px;}
+#outer-section-14 .columns li {width: 50%; float: left;}
+#outer-section-14 .columns li div {padding: 0 4px;}
+#outer-section-14 .columns li div img {width: 100%; height: auto;}
+#outer-section-15 {background-color: #FFDB2B;}
+#outer-section-16 {background-color: #FFDB2B;}
+#outer-section-16 .columns {padding: 10px 5px 5px 5px; background-color: #FFFFFF; overflow:hidden;}
+#outer-section-16 .columns ul {margin-left: -4px; margin-right: -4px;}
+#outer-section-16 .columns li {width: 25%; float: left;}
+#outer-section-16 .columns li div {margin-bottom: 10px;padding: 0 4px;}
+#outer-section-16 .columns li div img {width: 100%; height: auto;}
+#outer-section-17 {background-color: #FFDB2B;}
+#outer-section-17 .columns {padding: 45px 0px 10px 0px; overflow:hidden;}
+#outer-section-17 .columns li {width: 100%; float: left;}
+#outer-section-17 .columns li img {width: 100%; height: auto;}
+#outer-section-18 .outer-banner {background: url(../images/qd_s18_bg.png) no-repeat scroll center bottom / cover;}
+@media screen and (max-width : 1920px) {}
+@media screen and (max-width : 1280px) {}
+@media screen and (max-width : 1024px) {}
+@media screen and (max-width : 640px) {}
+@media screen and (max-width : 320px) {}

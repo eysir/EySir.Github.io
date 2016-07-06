@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>快切网页制作助手 - 超好用的网页制作&amp;专题制作助手 - 2015必备前端工具 - 勤道快切网页制作助手</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+<meta name="renderer" content="webkit">
+<meta name="format-detection" content="telephone=no">
+<meta name="searchtitle" content="快切助手,网页制作,制作网页,网页制作软件,网页制作工具,网页制作助手,免费网页制作,免费网页制作软件,简单网页制作,网站专题制作,网页专题制作,专题网页制作,网页切图,切页面,切网页,切图软件,切图工具,切图助手,勤道快切助手">
+<meta name="author" content="勤道,http://kuaiqie.qdsay.com,http://www.qdsay.com">
+<meta name="copyright" content="本页版权归勤道QDsay团队协作所有.All Rights Reserved">
+<meta name="title" content="快切助手,网页制作,制作网页,网页制作软件,网页制作工具,网页制作助手,免费网页制作,免费网页制作软件,简单网页制作,网站专题制作,网页专题制作,专题网页制作,网页切图,切页面,切网页,切图软件,切图工具,切图助手,勤道快切助手">
+<meta name="description" content="史上最好用的在线网页制作工具,切图工具并快速导出html，css样式和切片，支持响应式布局，一站打通电脑，平板，手机。"/>
+<meta name="keywords" content="快切助手,网页制作,制作网页,网页制作软件,网页制作工具,网页制作助手,免费网页制作,免费网页制作软件,简单网页制作,网站专题制作,网页专题制作,专题网页制作,网页切图,切页面,切网页,切图软件,切图工具,切图助手,勤道快切助手"/>
+<link rel="shortcut icon" href="resources/images/favicon.ico"/>
+<link rel="dns-prefetch" href="www.qdsay.com" />
+<link rel="dns-prefetch" href="hm.baidu.com">
+<link rel="stylesheet" href="resources/css/main.css"/>
+<link rel="stylesheet" href="resources/css/site.css"/>
+<link rel="stylesheet" href="resources/css/jquery-ui.min.css"/>
+<link rel="stylesheet" href="resources/css/jquery.Jcrop.min.css"/>
+<script type="text/javascript" src="resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery.Jcrop.min.js"></script>
+<script type="text/javascript" src="resources/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="resources/js/jszip.min.js"></script>
+<script type="text/javascript" src="resources/js/FileSaver.min.js"></script>
+</head>
+<body>
+<header>
+<div id="headbar">
+  <div id="logo">
+    <a title="勤道快切助手" href="http://kuaiqie.qdsay.com"><img alt="勤道快切助手" src="resources/images/logo.png" /></a>
+  </div>
+  <ul id="navbar">
+    <li><a title="勤道快切助手" id="setup" class="doing" title="网页制作" href="javascript:void(0);">开始</a>
+    <div class="toolbar">
+      <p>
+        <label>上传：</label><input type="text" class="nomal" readonly="readonly" id="uploads-path" name="uploads-path"/>
+        <input type="button" id="uploads-btn" name="uploads-btn" value="浏览...">
+        <input type="file" name="uploads-file" id="uploads-file" unselectable="on" accept="image/gif, image/jpeg, image/png" />
+      </p>
+      <p>
+        <label>页宽：</label><input type="text" class="mini px" id="wrapper-width" name="wrapper-width" value="960"> <em for="wrapper-width" class="ruler-btn">测量</em>
+      </p>
+      <p>
+        <label>间距：</label><input type="text" class="mini px" id="section-margin-bottom" name="section-margin-bottom" value="0"> 分段间距（px）
+      </p>
+      <p>
+        <label>背景：</label><input type="text" class="tiny" id="body-bg-color" name="body-bg-color" value="#FFFFFF"> <em for="body-bg-color" class="picker-btn">取色</em>
+      </p>
+      <p>
+        <label>模板：</label>
+        <span><input type="radio" checked="checked" id="template" name="template" value="standard"> 标准</span>
+        <span><input type="radio" id="template" name="template" value="simplify"> 极简</span>
+      </p>
+      <p>
+        <label>组件：</label>
+        <span><input type="checkbox" id="use-jquery" name="use-jquery" value="jquery"> Jquery</span>
+        <span><input type="checkbox" id="use-bootstrap" name="use-bootstrap" value="bootstrap"> Bootstrap</span>
+      </p>
+      <p class="heighter">
+        <label>脚本：</label>
+<span class="more"><textarea id="add-script" name="add-script" rows="3" cols="42">
+<script>
+//(统计/IM/分享)代码
+
+</script></textarea></span>
+      </p>
+      <p class="uneven">
+        <button class="set-btn" id="set-data" name="set-data">保存设置</button>
+        <button class="set-btn" id="auto-create" name="auto-create">自动切图</button>
+        <a href="setup.html" target="_blank" title="网页切图">自动切图配置说明</a>
+      </p>
+      <em class="takeIt"></em>
+    </div>
+    </li>
+    <li><a id="append" class="doing disabled" title="追加" href="javascript:void(0);">追加</a></li>
+    <li><a id="clear" class="doing disabled" title="清除" href="javascript:void(0);">清除</a></li>
+    <li><a id="code" class="doing" title="查看代码" href="javascript:void(0);">代码</a></li>
+    <li><a id="export" class="doing" title="导出页面到本地" href="javascript:void(0);">导出</a>
+    <div class="toolbar">
+      <p>
+        <label>标题：</label><input type="text" class="long" id="page-title" name="page-title" value="">
+      </p>
+      <p>
+        <label>关键词：</label><input type="text" class="long" id="page-keywords" name="page-keywords" value="">
+      </p>
+      <p class="heighter">
+        <label>描述：</label>
+        <span class="more"><textarea id="page-description" name="page-description" rows="3" cols="42"></textarea></span>
+      </p>
+      <p>
+        <label>文件名：</label><input type="text" class="mini" id="my-project" name="my-project" value="myproject"> .zip
+      </p>
+      <p class="uneven">
+        <button class="set-btn" id="export-zip" name="export-zip">导出到本地</button>
+        <button class="set-btn" id="reset-data" name="reset-data">重置</button>
+      </p>
+      <em class="takeIt"></em>
+    </div>
+    </li>
+    <li><a id="ruler" class="doing" title="显示标尺" href="javascript:void(0);">标尺</a></li>
+    <li><a id="favorite" class="doing" title="加入勤道快切助手到收藏夹" href="javascript:void(0);">收藏</a>
+    <div class="toolbar">
+      <p>&nbsp;请您使用【菜单栏】或【Ctrl + D】收藏本站。</p>
+      <em class="takeIt"></em>
+    </div>
+    </li>
+    <li><a id="share" class="doing" title="分享勤道快切助手到朋友圈" href="javascript:void(0);">分享</a>
+    <div class="toolbar">
+      <h5>分享到朋友圈：</h5>
+      <div id="sharelist" class="bdsharebuttonbox"><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a><a title="分享到QQ好友" href="#" class="bds_sqq" data-cmd="sqq"></a><a title="分享到腾讯朋友" href="#" class="bds_tqf" data-cmd="tqf"></a><a title="分享到人人网" href="#" class="bds_renren" data-cmd="renren"></a><a title="分享到开心网" href="#" class="bds_kaixin001" data-cmd="kaixin001"></a><a title="分享到豆瓣网" href="#" class="bds_douban" data-cmd="douban"></a><a title="分享到Facebook" href="#" class="bds_fbook" data-cmd="fbook"></a><a title="分享到Twitter" href="#" class="bds_twi" data-cmd="twi"></a><a title="分享到linkedin" href="#" class="bds_linkedin" data-cmd="linkedin"></a><a title="分享到百度云收藏" href="#" class="bds_bdysc" data-cmd="bdysc"></a><a title="分享到百度贴吧" href="#" class="bds_tieba" data-cmd="tieba"></a><a title="分享到百度个人中心" href="#" class="bds_ibaidu" data-cmd="ibaidu"></a><a title="分享到百度空间" href="#" class="bds_hi" data-cmd="hi"></a><a title="分享到网易微博" href="#" class="bds_t163" data-cmd="t163"></a><a title="分享到点点网" href="#" class="bds_diandian" data-cmd="diandian"></a><a title="分享到手机快传" href="#" class="bds_share189" data-cmd="share189"></a><a title="分享到飞信" href="#" class="bds_fx" data-cmd="fx"></a><a title="分享到有道云笔记" href="#" class="bds_youdao" data-cmd="youdao"></a><a title="分享到麦库记事" href="#" class="bds_sdo" data-cmd="sdo"></a><a title="分享到轻笔记" href="#" class="bds_qingbiji" data-cmd="qingbiji"></a><a title="分享到人民微博" href="#" class="bds_people" data-cmd="people"></a><a title="分享到新华微博" href="#" class="bds_xinhua" data-cmd="xinhua"></a><a title="分享到搜狐随身看" href="#" class="bds_kanshou" data-cmd="kanshou"></a><a title="分享到我的搜狐" href="#" class="bds_isohu" data-cmd="isohu"></a><a title="分享到复制网址" href="#" class="bds_copy" data-cmd="copy"></a></div>
+      <em class="takeIt"></em>
+    </div>
+    </li>
+    <li><a id="help" class="doing" title="网页制作教程" href="help.html" target="_blank">帮助</a></li>
+  </ul>
+  <label id="desc">页面框架&amp;专题制作工具</label>
+</div>
+<div id="ruler-x">
+</div>
+<div id="ruler-y">
+</div>
+</header>
+<div id="main">
+  <canvas id="myCanvas"></canvas>
+  <canvas id="tempCanvas"></canvas>
+  <div id="myPannel"></div>
+  <div id="welcome">
+    <div id="upload">
+      <h1>全球首款智能网页制作工具</h1>
+      <div id="dropbox">
+        <h3>导入一张网页效果图试试</h3>
+        <p>选择或拖拽图片到此处</p>
+        <input type="file" name="loadimage" id="loadimage" accept="image/gif, image/jpeg, image/png" unselectable="on"/>
+        <p class="know">推荐使用Chrome、Firefox或IE11等支持HTML5的浏览器<br />支持Png、Jpg、Gif格式图片</p>
+      </div>
+    </div>
+    <div id="sider">
+      <div class="block">
+        <h5><em>勤道</em>关于快切</h5>
+        <p class="aboutus">公司里几个设计还有十几个开发，就一个前端，忙都忙不过来，有木有。使用快切网页制作助手迅速提升切图效率，甩美工和开发好几条街。仅需5分钟，改变切图方式，交流群：<a class="qd-add-qun" href="http://shang.qq.com/wpa/qunwpa?idkey=783bb9691476c2b74ea34d105bca0944eddeeaf7b4934b804dfd2e5f2ec78166" target="_blank">40348818</a>，<a href="about.html" title="勤道快切助手" target="_blank">查看更多...</a></p>
+      </div>
+      <div class="block">
+        <h5><em>样例</em>5分钟我们能做什么</h5>
+        <ul>
+          <li>
+            <a href="view.php?exp=mi" title="网页制作" target="_blank"><img src="example/mi.jpg" alt="网页制作">
+            <span>小米商城<br />布局</span></a>
+          </li>
+          <li>
+            <a href="view.php?exp=ctrip" title="网页制作" target="_blank"><img src="example/ctrip.jpg" alt="网页制作">
+            <span>携程新年<br />特惠</span></a>
+          </li>
+          <li>
+            <a href="view.php?exp=jd" title="网页制作" target="_blank"><img src="example/jd.jpg" alt="网页制作">
+            <span>京东白条<br />活动</span></a>
+          </li>
+          <li>
+            <a href="view.php?exp=demohour" title="网页制作" target="_blank"><img src="example/demohour.jpg" alt="网页制作">
+            <span>点名时间<br />首页</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="block">
+        <h5><em>记录</em>快切笔记<a href="notes.html" title="快切笔记" target="_blank">更多...</a></h5>
+        <p><a href="notes.html#150706" title="快切笔记" target="_blank">2015年7月6日：快切助手受邀参展HTML5峰会。</a></p>
+        <p><a href="notes.html#150508" title="快切笔记" target="_blank">2015年5月8日：快切助手赢HTML5大赛二等奖！</a></p>
+        <p><a href="notes.html#150211" title="快切笔记" target="_blank">2015年2月11日：招个前端开发工程师难吗？</a></p>
+      </div>
+      <div class="block">
+        <h5><em>更新</em>新增功能<a href="help.html" title="新增功能" target="_blank">更多...</a></h5>
+        <p>2016年2月1日：修正分栏屏幕自适应。</p>
+        <p><a href="http://card.qdsay.com" target="_blank" alt="勤道云配色">2015年3月10日：勤道云配色频道上线。</a></p>
+        <p>2015年2月8日：添加[极简]模板。</p>
+      </div>
+      <div class="block">
+        <h5><em>关注</em>获取最新更新</h5>
+        <div id="focus"><!-- JiaThis Button BEGIN -->
+          <div class="jiathis_style_32x32">
+            <a class="jiathis_follow_tsina" rel="http://weibo.com/qdsay"></a>
+            <a class="jiathis_follow_tqq" rel="http://t.qq.com/qdsay_"></a>
+            <a class="jiathis_follow_weixin" rel="http://kuaiqie.qdsay.com/resources/images/weixin.png"></a>
+          </div>
+          <!-- JiaThis Button END -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="myPicker"></div>
+  <div id="color-picker">
+    <canvas id="pick-handler" width="90" height="90"></canvas>
+    <div id="color-pin"></div><div id="color-show"><em></em><span></span></div>
+  </div>
+  <div id="myWidgets">
+    <ul>
+      <li><a id="fullbanner" class="doing" title="设为通栏" href="javascript:void(0);">通栏</a></li>
+      <li><a id="bgcolor" class="doing" title="设置背景" href="javascript:void(0);">背景</a></li>
+      <li><a id="splitrow" class="doing" title="拆分为两栏" href="javascript:void(0);">拆分</a></li>
+      <li><a id="mergerow" class="doing" title="向下合并为一栏" href="javascript:void(0);">合并</a></li>
+      <li><a id="columns" class="doing" title="拆分为多列" href="javascript:void(0);">分栏</a></li>
+      <li><a id="link" class="doing" title="添加链接" href="javascript:void(0);">链接</a></li>
+      <li><a id="ignore" class="doing" title="忽略图像" href="javascript:void(0);">忽略</a></li>
+    </ul>
+    <div id="extra">
+      <div class="bgcolor">
+        <p>
+          <label>背景：</label><input type="text" class="long" id="section-bg-color" name="section-bg-color" value="#">
+          <em for="section-bg-color" class="picker-btn">取色</em>
+        </p>
+        <p class="uneven">
+          <button class="set-btn" id="set-bg-color" name="set-bg-color">确定</button>
+          <button class="set-btn" id="set-bg-cancel" name="set-bg-cancel">取消</button>
+        </p>
+      </div>
+      <div class="columns">
+        <p>
+          <label>分栏：</label>
+          <select class="mini" id="few-row" name="few-row">
+            <option>请选择</option>
+            <option value="1">1 行</option>
+            <option value="2">2 行</option>
+            <option value="3">3 行</option>
+            <option value="4">4 行</option>
+            <option value="5">5 行</option>
+            <option value="6">6 行</option>
+            <option value="7">7 行</option>
+            <option value="8">8 行</option>
+            <option value="9">9 行</option>
+            <option value="10">10行</option>
+          </select>
+          <label id="multiply">&nbsp;</label>
+          <select class="mini" id="few-column" name="few-column">
+            <option>请选择</option>
+            <option value="1">1 列</option>
+            <option value="2">2 列</option>
+            <option value="3">3 列</option>
+            <option value="4">4 列</option>
+            <option value="5">5 列</option>
+            <option value="6">6 列</option>
+            <option value="7">7 列</option>
+            <option value="8">8 列</option>
+            <option value="9">9 列</option>
+            <option value="10">10列</option>
+          </select>
+        </p>
+        <p><label>边距：</label>
+          <span class="input-tag">上 <input type="text" class="edge px" id="top-edge" name="top-edge" value="0"></span>
+          <span class="input-tag">下 <input type="text" class="edge px" id="bottom-edge" name="bottom-edge" value="0"></span>
+          <span class="input-tag">左 <input type="text" class="edge px" id="left-edge" name="left-edge" value="0"></span>
+          <span class="input-tag">右 <input type="text" class="edge px" id="right-edge" name="right-edge" value="0"></span>
+          <label>等边距</label><input type="checkbox" checked="checked" id="eq-edge" name="eq-edge" value="1">
+        </p>
+        <p><label>间距：</label>
+          <span class="input-tag">行 <input type="text" class="space px" id="row-space" name="row-space" value="0"></span>
+          <span class="input-tag">列 <input type="text" class="space px" id="column-space" name="column-space" value="0"></span>
+          <label>等间距</label><input type="checkbox" checked="checked" id="eq-space" name="eq-space" value="1">
+        </p>
+        <p class="uneven">
+          <button class="set-btn" id="split-column" name="split-column">拆分</button>
+          <button class="set-btn" id="split-column-cancel" name="split-column-cancel">取消</button>
+        </p>
+      </div>
+      <div class="link">
+        <p>
+          <label>地址：</label><input type="text" class="long" id="linkurl" name="linkurl" value="http://">
+        </p>
+        <p class="uneven">
+          <button class="set-btn" id="add-link" name="add-link">添加</button>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="myRuler"></div>
+</div>
+<div id="overflow">
+</div>
+<div id="code-handler">
+  <div>
+    <h3>页面框架HTML: index.html</h3>
+    <textarea id="html-code" name="html-code"></textarea>
+  </div>
+  <div>
+    <h3>页面样式CSS: global.css</h3>
+    <textarea id="css-code" name="css-code"></textarea>
+  </div>
+  <div>
+    <h3>免费CDN资源库: <a href="http://card.qdsay.com/plugs/more" target="_blank" title="勤道云配色公共CDN">http://card.qdsay.com/plugs/more</a></h3>
+    <fieldset class="code-fieldset">
+      <legend>Jquery cdn 加速点</legend>
+      <h5>1、新浪Jquery cdn 加速点：</h5>
+      <p>
+        http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js<br/>
+        其它版本可以在这里找地址: http://lib.sinaapp.com/?path=/jquery
+      </p>
+      <h5>2、百度Jquery cdn 加速点：</h5>
+      <p>
+        http://libs.baidu.com/jquery/1.9.1/jquery.min.js<br/>
+        其他版本修改版本号就行了。
+      </p>
+      <h5>3、加速乐Bootstrap cdn 加速点：</h5>
+      <p>
+        http://libs.useso.com/js/jquery/1.9.1/jquery.min.js<br/>
+        其他版本修改版本号就行了。
+      </p>
+      <p>更多：<a href="http://card.qdsay.com/plugs/more" target="_blank" title="勤道云配色公共CDN">http://card.qdsay.com/plugs/more</a></p>
+      <p>
+        <font color="red">注：如果担心CDN地址加载失败，可以这样载入本地jquery</font><br/>
+        <pre class="brush:javascript">
+&lt;script type="text/javascript"&gt;
+!window.jQuery &amp;&amp; document.write('&lt;script src="js/jquery.min.js"&gt;&lt;\/script&gt;');
+&lt;/script&gt;
+        </pre>
+      </p>
+    </fieldset>
+    <fieldset class="code-fieldset">
+      <legend>Bootstrap cdn 加速点</legend>
+      <h5>1、Bootstrap中文网 cdn 加速点：</h5>
+      <p>
+        http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.css<br/>
+        http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css
+        <br/>
+        http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.css.map
+        <br/>
+        http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.css
+        <br/>
+        http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.css.map
+        <br/>
+        http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css
+      </p>
+      <h5>2、百度Bootstrap cdn 加速点：</h5>
+      <p>
+        http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap-theme.min.css<br/>
+        http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css
+        <br/>
+        http://apps.bdimg.com/libs/bootstrap/3.2.0/fonts/glyphicons-halflings-regular.eot
+        <br/>
+        http://apps.bdimg.com/libs/bootstrap/3.2.0/fonts/glyphicons-halflings-regular.svg
+        <br/>
+        http://apps.bdimg.com/libs/bootstrap/3.2.0/fonts/glyphicons-halflings-regular.ttf
+        <br/>
+        http://apps.bdimg.com/libs/bootstrap/3.2.0/fonts/glyphicons-halflings-regular.woff
+        <br/>
+        http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js
+      </p>
+      <h5>3、加速乐Bootstrap cdn 加速点：</h5>
+      <p>
+        http://mini.jiasule.com/framework/bootstrap/2.3.1/css/bootstrap.min.css<br/>
+        http://mini.jiasule.com/framework/bootstrap/2.3.1/js/bootstrap.min.js
+        <br/>
+        http://mini.jiasule.com/framework/bootstrap/2.3.1/css/bootstrap-responsive.min.css
+      </p>
+    </fieldset>
+  </div>
+  <em id="codeView" class="closeIt"></em>
+</div>
+<script type="text/javascript" src="resources/js/qdtemplates.min.js"></script>
+<script type="text/javascript" src="resources/js/qdruler.min.js"></script>
+<script type="text/javascript" src="resources/js/qdtools.min.js"></script>
+<script>
+var canvasWidth = 0;
+var canvasHeight = 0;
+var sectionWidth = 0;
+var wrapperWidth = 0;
+var wrapperMargin = 0;
+var sectionMarginBottom = 15;
+var pageBackgroundColor = [255, 255, 255];
+
+var image = new Image();
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+$(document).ready(function(){
+    $("#upload").width($(document).width() - 361);
+    $("#sider").height($(document).height() - 45);
+    //阻止浏览器默认行
+    $(document).on({
+        dragleave:function(e){
+            e.preventDefault();
+        },
+        drop:function(e){
+            e.preventDefault();
+        },
+        dragenter:function(e){
+            e.preventDefault();
+        },
+        dragover:function(e){
+            e.preventDefault();
+        }
+    });
+    //检测浏览器是否支持FileReader
+    if(typeof FileReader === 'undefined'){
+        alert("抱歉，你的浏览器不支持 FileReader");
+        $("#loadimage").attr('disabled','disabled');
+    } else {
+        //绑定载入图片事件
+        $("#loadimage").on('change',function(){
+            var files = $(this).prop('files');
+            return loadImg(files[0]);
+        });
+        $("#uploads-file").on('change',function(){
+            var files = $(this).prop('files');
+            return loadImg(files[0]);
+        });
+        //拖拽事件
+        var dropbox = document.getElementById('dropbox');
+        dropbox.addEventListener("drop",function(e){
+            e.stopPropagation();
+　　        e.preventDefault();
+            var files  = e.dataTransfer.files;
+            return loadImg(files[0]);
+        }, false);
+    }
+    //设置页宽
+    $(".outer-wrapper").css('width', wrapperWidth);
+    //浏览器
+});
+
+function stopBubble(e)
+{
+    var evt = e || window.event;
+    evt.stopPropagation ? evt.stopPropagation() : (evt.cancelBubble=true);
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<script>
+//分享
+window.onload=function(){
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{},"image":{"viewList":["qzone","tsina","tqq","weixin","sqq","tqf","renren","kaixin001","douban","fbook","twi","linkedin","bdysc","tieba","ibaidu","hi","t163","diandian","share189","fx","youdao","sdo","qingbiji","people","xinhua","kanshou","isohu","copy"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+}
+
+//统计
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?78ca100d64bdbafed0bd93cbe4702ab4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>
